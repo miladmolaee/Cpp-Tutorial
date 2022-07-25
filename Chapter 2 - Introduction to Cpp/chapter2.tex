@@ -1,0 +1,212 @@
+\documentclass[11pt]{beamer}
+\usepackage{textpos}
+\usepackage{graphicx}
+\usepackage{xcolor,colortbl}
+\usepackage{listings}
+%
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{nbackcolour}{rgb}{0.92,1,1}
+\definecolor{darkblue}{rgb}{0.1,0.1,0.5}
+\definecolor{outputboxcolor}{rgb}{0.2,0.3,0.5}
+\definecolor{lightcyan}{rgb}{0.3,0.97,0.97}
+%
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{nbackcolour},   
+    commentstyle=\tiny\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\scriptsize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    xleftmargin=10pt,
+    xrightmargin=6pt,
+    columns=flexible
+}
+\lstset{style=mystyle}
+%
+% Change example block colors
+% 1- Block title (background and text)
+\setbeamercolor{block title example}{fg=white, bg=blue}
+% 2- Block body (background and text)
+\setbeamercolor{block body example}{bg=teal!25}
+% Change alert block colors
+% 1- Block title (background and text)
+\setbeamercolor{block title alerted}{fg=cyan, bg=orange}
+% 2- Block body (background and text)
+\setbeamercolor{block body alerted}{bg=orange!25}
+% Change standard block colors
+% 1- Block title (background and text)
+\setbeamercolor{block title}{bg=outputboxcolor, fg=white}
+% 2- Block body (background)
+\setbeamercolor{block body}{bg=cyan!10}
+%
+\usetheme{IPG}
+%
+\author[miladmolaee@hotmail.com]{\large Milad Molaee}
+% 
+\title[C++ Programming]{C++ Programming\\\vspace{5pt}from Beginner to Expert\\\vspace{20pt}{\color{darkblue}\large Chapter 2 : Introduction to C++ Programming, Input/Output and Operators}}
+%
+\begin{document} 
+%
+\setbeamercolor{itemize item}{fg=blue}
+\frame{\titlepage}
+
+%
+%\begin{frame}{Outline}
+%\tableofcontents
+%\end{frame}
+
+\begin{frame}{\small First Program in C++: Printing a Line of Text}
+	
+	Consider a simple program that prints a line of text (Fig. 2.1). This program illustrates several important features of the C++ language. The text in lines 1–10 is the program’s source code. The line numbers are not part of the source code.
+	
+	\lstinputlisting[language=C++]{../codes/chapter-2/fig_2-1/fig_2-1.cpp}
+	
+	\begin{block}{\textcolor{white}{output}}
+		\texttt{\small Welcome to C++!}
+	\end{block}
+	
+\end{frame}
+
+
+\begin{frame}{\small The Stream Insertion Operator and Escape Sequences}
+	\centering\tiny\renewcommand{\arraystretch}{2}	
+\begin{tabular}{p{0.15\linewidth} p{0.6\linewidth}}
+	
+	\rowcolor{cyan}\color{white} Escape sequence & \color{white} Description \\
+	
+	\rowcolor{lightcyan} $\backslash$n & Newline. Position the screen cursor to the beginning of the next line.\\ 
+	
+	\rowcolor{lightcyan} $\backslash$t & Horizontal tab. Move the screen cursor to the next tab stop.\\ 
+	
+	\rowcolor{lightcyan} $\backslash$r & Carriage return. Position the screen cursor to the beginning of the current line; do not advance to the next line.\\ 
+	
+	\rowcolor{lightcyan} $\backslash$a & Alert. Sound the system bell.\\ 
+	
+	\rowcolor{lightcyan} $\backslash\backslash$ & Backslash. Used to print a backslash character.\\ 
+	
+	\rowcolor{lightcyan} $\backslash$' & Single quote. Used to print a single-quote character.\\ 
+	
+	\rowcolor{lightcyan} $\backslash$" & Double quote. Used to print a double-quote character.
+\end{tabular}
+\end{frame}
+
+
+\begin{frame}{\small Arithmetic Operators}
+	\centering\tiny\renewcommand{\arraystretch}{2.5}
+	\begin{tabular}{p{0.15\linewidth} p{0.16\linewidth} p{0.2\linewidth} p{0.2\linewidth}}
+		
+		\rowcolor{cyan}\color{white} 
+		\begin{flushleft}
+			Operation 
+		\end{flushleft}
+		& \color{white} 
+		\begin{flushleft}
+			Arithmetic operator
+		\end{flushleft} 
+		& \color{white} 
+		\begin{flushleft}
+			Algebraic expression
+		\end{flushleft} 
+		& \color{white} 
+		\begin{flushleft}
+			C++ expression 
+		\end{flushleft}
+		\\
+		
+		\rowcolor{lightcyan} Addition & + & $f + 7$ & \texttt{f + 7} \\
+		
+		\rowcolor{lightcyan} Subtraction & - & $p - c$ & \texttt{p - c} \\
+		
+		\rowcolor{lightcyan} Multiplication & * & $bm$ or $b \cdot m$ & \texttt{b * m} \\
+		
+		\rowcolor{lightcyan} Division & / & $\dfrac{x}{y}$ or $x/y$ or $x\div y$ & \texttt{x / y} \\
+		
+		\rowcolor{lightcyan} Remainder & \% & $r$ $mod$ $s$ & \texttt{r \% s} 
+	\end{tabular}
+\end{frame}
+
+
+\begin{frame}{\small Precedence of Arithmetic Operators}
+	\centering\tiny\renewcommand{\arraystretch}{2}
+	\begin{tabular}{p{0.12\linewidth} p{0.13\linewidth} p{0.65\linewidth}}
+		
+		\rowcolor{cyan}\color{white} 
+		\begin{flushleft}
+			Operator(s) 
+		\end{flushleft}
+		& \color{white} 
+		\begin{flushleft}
+			Operation(s) 
+		\end{flushleft}
+		& \color{white} 
+		\begin{flushleft}
+			Order of evaluation (precedence)
+		\end{flushleft} 
+		\\\hline
+		
+		\rowcolor{lightcyan} \texttt{( )} & Parentheses & Evaluated first. For nested parentheses, such as in the expression
+		\texttt{a * (b + c / (d + e))}, the expression in the innermost pair evalu ates first.\newline[Caution: If you have an expression such as \texttt{(a + b) * (c - d)} in which two sets of parentheses are not nested, but appear “on the same level,” the C++ Standard does not specify the order in which these parenthesized subexpressions will evaluate.] \\\hline
+		
+		\rowcolor{lightcyan} \texttt{*}\newline\texttt{/} \newline \texttt{\%} & Multiplication \newline Division \newline Remainder & Evaluated second. If there are several, they’re evaluated left to right. \\\hline
+		
+		\rowcolor{lightcyan} \texttt{+}\newline\texttt{-} & Addition \newline Subtraction & Evaluated last. If there are several, they’re evaluated left to right. \\\hline	
+	\end{tabular}
+\end{frame}
+
+
+
+\begin{frame}{\small Decision Making: Equality and Relational Operators}
+	\centering\tiny\renewcommand{\arraystretch}{2}
+	\begin{tabular}{p{0.16\linewidth} p{0.15\linewidth} p{0.2\linewidth} p{0.25\linewidth}}
+		
+	\rowcolor{cyan}\color{white} 
+	\begin{flushleft}
+		Algebraic relational or equality operator
+	\end{flushleft} & 
+	\color{white}
+	 \begin{flushleft}
+		C++ relational or equality operator
+	\end{flushleft} & 
+	\color{white}
+	\begin{flushleft}
+		 Sample C++ condition
+	\end{flushleft} & 
+	\color{white} 
+	\begin{flushleft}
+		Meaning of C++ condition
+	\end{flushleft} \\\hline
+		
+		\rowcolor{lightcyan} \multicolumn{4}{l}{Relational operators} \\
+		
+		\rowcolor{lightcyan} $>$ & \texttt{>} & \texttt{x > y} & x is greater than y \\
+		
+		\rowcolor{lightcyan} $<$ & \texttt{<} & \texttt{x < y} & x is less than y \\
+		
+		\rowcolor{lightcyan} $\geq$ & \texttt{>=} & \texttt{x >= y} or & x is greater than or equal to y \\
+		
+		\rowcolor{lightcyan} $\leq$ & \texttt{<=} & \texttt{x <= y} & x is less than or equal to y \\\hline
+		
+		\rowcolor{lightcyan} \multicolumn{4}{l}{Equality operators} \\
+		
+		\rowcolor{lightcyan} $=$ & \texttt{==} & \texttt{x == y} & x is equal to y \\
+		
+		\rowcolor{lightcyan} $\neq$ & \texttt{!=} & \texttt{x != y} & x is not equal to y \\\hline
+	\end{tabular}
+\end{frame}
+
+
+%
+\end{document} 
